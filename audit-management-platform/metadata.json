@@ -1,0 +1,5 @@
+{
+  "name": "Audit Management Platform",
+  "description": "An interactive dashboard for managing Risk & Control Matrices (RACMs). This application provides features for searching, filtering, sorting, and performing actions on audit data, designed for a professional, spreadsheet-like user experience.",
+  "requestFramePermissions": []
+}

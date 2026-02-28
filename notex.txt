@@ -1,0 +1,47 @@
+
+- This project is mostly for auditing purposes.
+- It is a web application, so currently focus on building the backend apis.
+- We are currently building the backend. So currently focus on creating fastapi server in python and 
+  we are building this for demo, So accordingly keep things minimal and working.
+- It has 2 major components :
+    - Create Racm Functionality
+        - In this, we should give option to the end-user either to create a racm from scratch
+            - If the user chooses to create a racm, the user will upload the csv sheet consisting of plain language Control description heading of the column and 
+            on the basis of that, we would have to anaylyse that control-description and generate the rules, such as control-description might contain
+            plain english words, we would have to convert them into rules such as below is the Sample 1 RCM Control Description which is also present in sample RACM.csv file.
+            '''
+            1. The Assistant General Manager (Finance) initiates the process of opening a new bank account by submitting a request to the Company Secretary with 
+            details (bank name, location, list of authorized signatories with limits, authorization rights, and reason for account).
+            2. The Company Secretary obtains Board approval via resolution in the next Board meeting.
+            3. Post approval, the AGM (Finance) prepares and compiles the bank account opening documents for review by the Finance Controller. Once reviewed,
+             the AGM (Finance) submits the bank’s account opening form to the bank within two days. Upon confirmation that the account has been opened, 
+             the AGM (Finance) creates the G/L code in the ERP system on the same day and Finance Controller approves the same. The authorized signatory then 
+             activates net banking within one day of receiving the online banking kit.
+            '''
+            And below are the final attributes of the racm, that needs to be generated from the above control-description and stored in test-script, with rules column. 
+            Please refer Test-Script.csv file which is a sample file for more details.
+            '''
+            Verify that the request to open a new bank account is initiated by the Assistant General Manager (Finance).																								
+            Check that the request includes all required details: bank name, location, list of authorized signatories with limits, authorization rights, and reason for the account.																								
+            Confirm that the Company Secretary obtains Board approval through a resolution in the Board meeting.																								
+            Confirm that the AGM (Finance) prepares and compiles all required bank account opening documents post obtaining approvals.																								
+            Ensure the Finance Controller reviews the bank account opening documents before submission to the bank.																								
+            Check timestamps/dates to confirm that the AGM (Finance) submits the bank account opening form within two days post review.																								
+            Confirm that the AGM (Finance) creates the General Ledger (G/L) code in the ERP system on the same day of receiving the bank’s confirmation.																								
+            Verify Finance Controller’s approval of the G/L code creation.																								
+            '''
+            
+             # TODO. This is called generation of test-script from the racm data.
+            
+    - Engagement Functionality
+        - In this either user can create a new engagement.
+        - A Engagement is a Functionality, where user would upload population-data in the form of csv sheet and we would randomly take 20 records from it, 
+        take which racm to apply on it from the user and apply the rule on each record and finally show the result to the user. 
+        - So for each record in the engagement, will have all set of rules applied on it and individual result of each rule will be shown to the user.
+        - Finally the commulative result of each rule pass or fail, we will show but the user can validate and change the final-result.
+        - If you see, while applying the rules on each record, we need to check the attributes of the record and apply the rule on it if its not possible to apply the rule, give status
+        for that rule in that record as not-applicable.
+        - We have Sample Population data as well, if you want to refer please refer it.
+        
+- Think and anlayse and build things like a senior software engineer , and you can add further points as well if you think any more things are needed.
+- And keep asking me clarifying questions, I am here to guide you.
